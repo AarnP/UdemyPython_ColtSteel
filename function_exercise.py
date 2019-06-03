@@ -166,28 +166,45 @@ partition([1,2,3,4], isEven) # [[2,4],[1,3]]
 
 
 '''
+calculate(make_float=False, operation='add', message='You just added', first=2,
+second=4) # "You just added 6"
+calculate(make_float=True, operation='divide', first=3.5, second=5)
+# "The result is 0.7"
 '''
 
 
-def calculate(first, second):
-    if action == 'add' and float is False:
-        a = first + second
-    elif action == 'add' and float is True:
-        a = float(first + second)
-    elif action == 'divide' and float is False:
-        a = first / second
-    elif action == 'divide' and float is True:
-        a = float(first / second)
-    if msg:
-        b = msg + a
-    b = "The result is " + a
+# def calculate(**kwargs):
+#     operation_lookup = {
+#         'add': kwargs.get('first', 0) + kwargs.get("second", 0),
+#         'subtract': kwargs.get('first', 0) + kwargs.get('second', 0),
+#         'multiply': kwargs.get('first', 0) * kwargs.get('second', 0),
+#         'divide': kwargs.get('first', 0) / kwargs.get('second', 1)
+#     }
+#     is_float = kwargs.get('make_float', False)
+#     operation_value = operation_lookup[kwargs.get('operation', '')]
+#     # kwargs.get('operation') to get the value of the required operation and then
+#     # access that individual value inside dictionary operation_lookup by using syntax
+#     # operation_lookup['key_name']
+#     if is_float:
+#         final = "{} {}".format(kwargs.get('message', 'The result is'),
+#                                float(operation_value))
+#     else:
+#         final = "{} {}".format(kwargs.get('message', 'The result is'),
+#                                int(operation_value))
+#     print(final)
+#     return final
+#     # operation_value = operation_lookup[kwargs.get('operation', '')]
+#
+#
+# calculate(make_float=False, operation='add', message='You just added', first=2,
+#           second=4)
 
 
-print(b)
-return b
+def test_kwargs(mark1, mark2):
+    print(mark1, mark2)
 
 
-data = (float=True, action='add', msg='You just added', first=2, second=4)
+people = {'mark1': 20, 'mark2': 19}
 
 
-calculate()
+test_kwargs(**people)

@@ -1,0 +1,1 @@
+lambda num: num * num
